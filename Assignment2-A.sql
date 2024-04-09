@@ -1,5 +1,6 @@
 DROP DATABASE IF EXISTS Shipyard;
 CREATE DATABASE Shipyard;
+USE Shipyard;
 
 # define strong entities
 CREATE TABLE Ship (
