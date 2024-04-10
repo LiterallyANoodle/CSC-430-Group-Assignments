@@ -36,15 +36,19 @@ CREATE TABLE Ship_movement (
 	Longitude real,
     Latitude real,
     Time_stamp datetime,
+    Sname varchar(255),
     
-    PRIMARY KEY (Time_stamp)
+    PRIMARY KEY (Time_stamp, Sname),
+    FOREIGN KEY (Sname) REFERENCES Ship(Sname)
 );
 
 CREATE TABLE Port_visit (
 	Start_date datetime,
     End_date datetime,
+    Sname varchar(255),
     
-    PRIMARY KEY (Start_date)
+    PRIMARY KEY (Start_date, Sname),
+    FOREIGN KEY (Sname) REFERENCES Ship(Sname)
 );
 
 CREATE TABLE Port (
