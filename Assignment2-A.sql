@@ -40,17 +40,21 @@ CREATE TABLE Ship_movement (
     PRIMARY KEY (Time_stamp)
 );
 
-CREATE TABLE Port (
-	Pname varchar(225),
-    
-    PRIMARY KEY (Pname)
-);
-
 CREATE TABLE Port_visit (
 	Start_date datetime,
     End_date datetime,
     
     PRIMARY KEY (Start_date)
+);
+
+CREATE TABLE Port (
+	Pname varchar(225),
+    SCName varchar(255),
+    SOLName varchar(255),
+    
+    PRIMARY KEY (Pname),
+    FOREIGN KEY (SCName) REFERENCES State_country(Name),
+    FOREIGN KEY (SOLName) REFERENCES Sea_ocean_lake(Name)
 );
 
 # define relationship tables 
